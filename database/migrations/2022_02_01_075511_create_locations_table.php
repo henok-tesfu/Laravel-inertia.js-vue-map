@@ -18,7 +18,7 @@ class CreateLocationsTable extends Migration
             $table->double("lng");
             $table->double("lat");
             $table->string("placeName");
-            $table->enum("categori", ["hospital", "bank", "hotel", "pharmacy", "school"]);
+            $table->enum("category", ["hospital", "bank", "hotel", "pharmacy", "school"]);
             $table->timestamps();
         });
     }

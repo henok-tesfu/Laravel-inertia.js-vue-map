@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <GoogleMap />
+    <GoogleMap :location="location" />
   </div>
 </template>
 
@@ -9,6 +9,9 @@ import GoogleMap from "../Shared/GoogleMap.vue";
 
 export default {
   name: "App",
+  props: {
+    location: Array,
+  },
   components: {
     GoogleMap,
   },

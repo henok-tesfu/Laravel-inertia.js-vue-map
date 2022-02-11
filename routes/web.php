@@ -1,6 +1,10 @@
 <?php
 
+namespace App\Models;
+
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
+use Inertia\inertia;
 
 
 /*
@@ -15,9 +19,21 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return inertia('Home');
+    $location = Location::all();
+    return Inertia::render('Home', ['location' => $location]);
 });
 
-Route::get('/add', function () {
-    return inertia('Add');
+// Route::get('/home', function () {
+//     return inertia('Add');
+// });
+
+Route::post('/add', function (Request $request) {
+    // dd($request->all());
+    $vaildatedData = $request->validate([
+        'placeName' => 'required|string',
+        'lat' => 'required|numeric',
+        'lng' => 'required|numeric',
+        'category' => 'required|string'
+    ]);
+    return inertia("Home", Location::create($vaildatedData));
 });
