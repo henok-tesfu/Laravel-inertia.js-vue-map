@@ -16,21 +16,21 @@ createInertiaApp({
 });
 Vue.use(VueGoogleMaps, {
   load: {
-    key: 'YOUR_GOOGLE_MAPS_API_KEY_GOES_HERE',
+    key: 'Your_API_GOOGLE_KEY_Here',
     libraries: 'places',
   }
 });
 InertiaProgress.init({
   // The delay after which the progress bar will
   // appear during navigation, in milliseconds.
-  delay: 250,
+  delay: 100,
 
   // The color of the progress bar.
-  color: '#29d',
+  color: 'red',
 
   // Whether to include the default NProgress styles.
   includeCSS: true,
 
   // Whether the NProgress spinner will be shown.
-  showSpinner: false,
+  showSpinner: true,
 });

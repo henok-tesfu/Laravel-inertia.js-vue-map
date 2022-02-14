@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use Inertia\inertia;
+use App\Models\Redirect;
 
 
 /*
@@ -35,5 +36,6 @@ Route::post('/add', function (Request $request) {
         'lng' => 'required|numeric',
         'category' => 'required|string'
     ]);
-    return inertia("Home", Location::create($vaildatedData));
+    Location::create($vaildatedData);
+    return Redirect::route('Home');;
 });

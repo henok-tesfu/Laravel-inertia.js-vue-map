@@ -102,7 +102,9 @@ export default {
       this.data.lng = this.currentPlace.geometry.location.lng();
     },
     submit() {
-      this.$inertia.post("/add", this.data);
+      this.$inertia.post("/add", this.data, {
+        onSuccess: (page) => {},
+      });
       this.errors = this.$page.props.errors;
       if (!this.errors) this.$emit("close", false);
     },

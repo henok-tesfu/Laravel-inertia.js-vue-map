@@ -72,11 +72,8 @@
         >
           X
         </div>
-        <add-location
-          :location="location"
-          st="hello world"
-          @close="closeModal"
-        ></add-location>
+        <!-- @close="closeModal" -->
+        <add-location :location="location" st="hello world"></add-location>
       </div>
     </div>
   </div>
@@ -112,10 +109,10 @@ export default {
     document.addEventListener("onkeyup", close);
   },
   methods: {
-    closeModal(value) {
-      this.openModal = value;
-      console.log("emiiiiiiiiiiiiiting");
-    },
+    // closeModal(value) {
+    //   this.openModal = value;
+    //   console.log("emiiiiiiiiiiiiiting");
+    // },
     getPositions() {
       this.$page.props;
     },
